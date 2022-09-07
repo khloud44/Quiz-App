@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, Container, Typography } from "@material-ui/core";
+import { Route, Routes } from "react-router-dom";
+import { FinalScore } from "./Pages/FinalScore";
+import { Questions } from "./Pages/Questions";
+import { Setting } from "./Pages/Setting";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Container maxWidth="sm">
+        <Box textAlign="center" mt={5}>
+          <Typography variant="h2" fontWeight="bold">Quiz App</Typography>
+          <Routes>
+            <Route path="/" element={<Setting/>}/>
+            <Route path="/questions" element={<Questions/>}/>
+            <Route path="/score" element={<FinalScore/>}/>
+          </Routes>
+        </Box>
+      </Container>
   );
 }
 
