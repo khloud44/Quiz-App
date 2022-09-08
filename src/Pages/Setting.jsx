@@ -1,10 +1,10 @@
-import {  Box, Button ,CircularProgress, makeStyles, Typography } from '@material-ui/core'
+import {  Box, Button ,CircularProgress, Typography } from '@material-ui/core'
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import SelectField from '../Components/SelectField'
 import TextFieldComponent from '../Components/TextFieldComponent';
 import UseAxios from '../Hooks/UseAxios';
-import formImag from '../assets/questions.jpg'
+
 
 
 export const Setting = () => {
