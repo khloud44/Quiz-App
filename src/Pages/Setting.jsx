@@ -1,9 +1,11 @@
-import {  Box, Button ,CircularProgress, Typography } from '@material-ui/core'
+import {  Box, Button ,CircularProgress, makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import SelectField from '../Components/SelectField'
 import TextFieldComponent from '../Components/TextFieldComponent';
 import UseAxios from '../Hooks/UseAxios';
+import formImag from '../assets/questions.jpg'
+
 
 export const Setting = () => {
     const DifficultyOptions =[
@@ -17,7 +19,7 @@ export const Setting = () => {
     ]
     const {response, error, loading}=UseAxios({url:"/api_category.php"});
     const navigate = useNavigate();
-    
+
     if(loading){
         return(
             <Box mt={20}>
@@ -40,13 +42,13 @@ export const Setting = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <SelectField optoins={response.data.trivia_categories} label="Category"/>
+        <form onSubmit={handleSubmit} fullWidth>
+            <SelectField  optoins={response.data.trivia_categories} label="Category"/>
             <SelectField optoins={DifficultyOptions} label="Difficulty"/>
             <SelectField optoins={typeOptions} label="Type"/>
             <TextFieldComponent/>
             <Box mt={3} width="100%">
-                <Button fullWidth variant='contained' type="submit">Get Start</Button>
+                <Button fullWidth variant='contained' color="primary" type="submit">Get Start</Button>
             </Box>
         </form>
     )

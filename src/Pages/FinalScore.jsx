@@ -2,7 +2,7 @@ import { Box, Button, Typography } from '@material-ui/core'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-import { CHANGE_AMOUNT, CHANGE_CATEGORY, CHANGE_SCORE } from '../Redux/questionsSlice';
+import { CHANGE_AMOUNT, CHANGE_SCORE } from '../Redux/questionsSlice';
 
 export const FinalScore = () => {
   const dispatch = useDispatch();
@@ -16,11 +16,13 @@ export const FinalScore = () => {
   }
 
   return (
-    <Box mt={3}>
+    <Box mt={10} >
       <Typography variant='h3' fontWeight="bold" mb={3}>
           Final Score {score}
       </Typography>
-      <Button variant='outlined' onClick={hangleBackToSettings}>Back to Setings!</Button>
+      <Box mt={3}>
+        <Button variant='contained'  fullWidth onClick={hangleBackToSettings}>Back to Setings!</Button>
+      </Box>
     </Box>
   )
 }

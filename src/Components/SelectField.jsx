@@ -26,7 +26,7 @@ const SelectField = ({label , optoins}) => {
     }
     return (
         <Box mt={3} width="100%" >
-            <FormControl size='small' fullWidth>
+            <FormControl size='small' fullWidth variant="outlined" required>
                 <InputLabel>{label}</InputLabel>
                 <Select value={value} label={label} onChange={handleChange} >
                     {optoins.map(({id , name}) => (

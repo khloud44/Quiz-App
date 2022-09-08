@@ -57,13 +57,13 @@ export const Questions = () => {
   return (
     <Box mt={3}>
       <Typography  varian="h4">Question {questionIndex+1}</Typography>
-      <Typography mt={5}>{decode(response.data.results[questionIndex].question)}</Typography>
+      <Typography mt={5}fontSize="h6.fontSize" fontWeight="fontWeightMedium">{decode(response.data.results[questionIndex].question)}</Typography>
       {options.map((data,id)=>(
         <Box mt={2} key={id}>
-            <Button varian="contained" onClick={handleClickAnswer}>{decode(data)}</Button>
+            <Button variant="contained" color="primary" fullWidth onClick={handleClickAnswer}>{decode(data)}</Button>
         </Box>
       ))}
-      <Box mt={5}>Score: {score} / {response.data.results.length}</Box>
+      <Box mt={5} fontWeight="fontWeightBold" fontSize="h6.fontSize">Score: {score} / {response.data.results.length}</Box>
     </Box>
   )
 }
