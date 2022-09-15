@@ -21,7 +21,7 @@ export const FinalScore = () => {
           Final Score {score}
       </Typography>
       <Box mt={3}>
-        <Button variant='contained'  fullWidth onClick={hangleBackToSettings}>Back to Setings!</Button>
+        <Button variant='contained'  fullWidth onClick={hangleBackToSettings}>Back to Settings!</Button>
       </Box>
     </Box>
   )
