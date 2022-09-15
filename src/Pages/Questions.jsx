@@ -25,8 +25,8 @@ export const Questions = () => {
   useEffect(()=>{
     if(response?.data.results.length){
       const question = response.data.results[questionIndex];
-      let answers = [...question.incorrect_answers, question.correct_answer];
-      answers.splice( getRandomInt(question.incorrect_answers.length),0,question.correct_answer ); 
+      let answers = [...question.incorrect_answers];
+      answers.splice( getRandomInt(answers.length),0,question.correct_answer ); 
       setOptions(answers)
     }
   },[response , questionIndex])
